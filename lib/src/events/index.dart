@@ -6,3 +6,4 @@ export 'concrete/mixin/click_event_mixin.dart';
 export 'concrete/mixin/duration_event_mixin.dart';
 export 'concrete/mixin/exit_event_mixin.dart';
 export 'concrete/mixin/visit_event_mixin.dart';
+export 'concrete/event/purchase_event.dart';
