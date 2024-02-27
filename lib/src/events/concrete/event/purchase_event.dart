@@ -90,7 +90,7 @@ class PurchaseFailed extends PurchaseEvent {
       MapEntry("source", source),
       MapEntry("product_id", productID),
       MapEntry("product_type", productType),
-      MapEntry("reason", reason),
+      MapEntry("reason", reason.key),
     ]);
 
   @override
