@@ -7,7 +7,7 @@ sealed class IAdjustEvent {
   final String token;
 
   void registerEvent() {
-    AdjustService.instance.logEvent(event: this);
+    AdjustService.instance.trackEvent(event: this);
     printEvent();
   }
 

@@ -68,7 +68,7 @@ class AdjustService {
   /// Log an event to the Adjust SDK
   /// [event] the event to log
   /// This method should be called after calling [start]
-  void logEvent<T extends IAdjustEvent>({
+  void trackEvent<T extends IAdjustEvent>({
     required T event,
   }) {
     return switch (event) {
