@@ -14,6 +14,7 @@ dependencies:
     sdk: flutter
 
   firebase_analytics: ^10.8.0
+  adjust_sdk: ^4.37.1
 
 dev_dependencies:
   flutter_test:

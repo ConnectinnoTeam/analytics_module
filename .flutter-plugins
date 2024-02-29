@@ -1,5 +1,6 @@
 # This is a generated file; do not edit or check into version control.
-firebase_analytics=/Users/mehmetkaranlik/.pub-cache/hosted/pub.dev/firebase_analytics-10.8.0/
-firebase_analytics_web=/Users/mehmetkaranlik/.pub-cache/hosted/pub.dev/firebase_analytics_web-0.5.5+12/
-firebase_core=/Users/mehmetkaranlik/.pub-cache/hosted/pub.dev/firebase_core-2.24.2/
-firebase_core_web=/Users/mehmetkaranlik/.pub-cache/hosted/pub.dev/firebase_core_web-2.10.0/
+adjust_sdk=/Users/aligundogdu/.pub-cache/hosted/pub.dev/adjust_sdk-4.37.1/
+firebase_analytics=/Users/aligundogdu/.pub-cache/hosted/pub.dev/firebase_analytics-10.8.7/
+firebase_analytics_web=/Users/aligundogdu/.pub-cache/hosted/pub.dev/firebase_analytics_web-0.5.5+19/
+firebase_core=/Users/aligundogdu/.pub-cache/hosted/pub.dev/firebase_core-2.25.5/
+firebase_core_web=/Users/aligundogdu/.pub-cache/hosted/pub.dev/firebase_core_web-2.11.5/
