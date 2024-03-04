@@ -1,7 +1,9 @@
 import 'package:adjust_sdk/adjust.dart';
+import 'package:adjust_sdk/adjust_attribution.dart';
 import 'package:adjust_sdk/adjust_config.dart';
 import 'package:adjust_sdk/adjust_event.dart';
 import 'package:analytics/src/events/adjust_event.dart';
+import 'package:flutter/services.dart';
 
 /// [AdjustService] is a wrapper around the Adjust SDK
 /// It is responsible for setting up the Adjust SDK and logging events
@@ -38,6 +40,18 @@ class AdjustService {
     _config.eventBufferingEnabled = eventBuffering;
     _config.coppaCompliantEnabled = coppaCompliant;
     _setLogLevel();
+  }
+
+  /// Set the attribution callback for the Adjust SDK
+  /// [callback] the callback to set
+  void setAttributionCallback(ValueChanged<AdjustAttribution>? callback) {
+    _config.attributionCallback = callback;
+  }
+
+  /// Check for new attribution status
+  /// This method should be called after calling [start]
+  void checkForNewAttStatus() {
+    Adjust.checkForNewAttStatus();
   }
 
   /// Start the Adjust SDK
