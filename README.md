@@ -11,29 +11,48 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+# Adjust SDK
+## Installation
 
-## Features
+Add the following to your `pubspec.yaml` file:
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
-```dart
-const like = 'sample';
+```yaml
+analytics:
+    git: https://github.com/ConnectinnoTeam/analytics_module.git
 ```
 
-## Additional information
+## Usage
+### Setup before runApp
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+Setup the adjust sdk before runApp. The `appId` is the unique identifier of your app. The `environment` is the environment you want to use. You can choose from `sandbox` or `production`.
+
+```dart
+    // Setup
+    AdjustService.instance.setup(
+      appId: adjustAppId,
+      environment: environment,
+    );
+
+    // Set external device id
+    AdjustService.instance.setExternalDeviceId();
+
+    // Start
+    AdjustService.instance.start();
+```
+
+### Track event and revenue
+
+This method allows you to track events and revenue. The event token is the unique identifier of the event you want to track. 
+
+```dart
+    /// Event either can be [AdjustTrackEvent] or [AdjustRevenueEvent]
+    AdjustService.instance.trackEvent(
+      event: (class extends IAdjustEvent)
+    );
+```
+
+### Get Ad id
+This method allows you to get the ad id of the device.
+```dart
+    AdjustService.instance.adId();
+```
