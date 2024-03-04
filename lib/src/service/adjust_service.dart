@@ -80,8 +80,8 @@ class AdjustService {
   /// Log a track event to the Adjust SDK
   /// [event] the track event to log
   /// This method should be called after calling [start]
-  void _logTrackEvent<T extends AdjustTrackEvent>({
-    required T event,
+  void _logTrackEvent({
+    required AdjustTrackEvent event,
   }) {
     final adjustEvent = AdjustEvent(event.token);
     Adjust.trackEvent(adjustEvent);
@@ -90,8 +90,8 @@ class AdjustService {
   /// Log a revenue event to the Adjust SDK
   /// [event] the revenue event to log
   /// This method should be called after calling [start]
-  void _logRevenueEvent<T extends AdjustRevenueEvent>({
-    required T event,
+  void _logRevenueEvent({
+    required AdjustRevenueEvent event,
   }) {
     final adjustEvent = AdjustEvent(event.token);
     adjustEvent.setRevenue(event.revenue, event.currency);
