@@ -1,4 +1,5 @@
 import 'package:adjust_sdk/adjust.dart';
+import 'package:adjust_sdk/adjust_ad_revenue.dart';
 import 'package:adjust_sdk/adjust_attribution.dart';
 import 'package:adjust_sdk/adjust_config.dart';
 import 'package:adjust_sdk/adjust_event.dart';
@@ -88,6 +89,7 @@ class AdjustService {
     return switch (event) {
       AdjustTrackEvent() => _logTrackEvent(event: event),
       AdjustRevenueEvent() => _logRevenueEvent(event: event),
+      AdjustAdRevenueEvent() => _logAdRevenueEvent(event: event),
     };
   }
 
@@ -111,6 +113,24 @@ class AdjustService {
     adjustEvent.setRevenue(event.revenue, event.currency);
     Adjust.trackEvent(adjustEvent);
   }
+
+
+  /// Log a ad revenue event to the Adjust SDK
+  /// [event] the ad revenue event to log
+  /// This method should be called after calling [start]
+  void _logAdRevenueEvent({
+    required AdjustAdRevenueEvent event,
+  }) {
+    final adjustAdRevenue = AdjustAdRevenue(event.source);
+    adjustAdRevenue.setRevenue(event.revenue, event.currency);
+    adjustAdRevenue.adRevenuePlacement = event.placement;
+    adjustAdRevenue.adRevenueNetwork = event.network;
+    adjustAdRevenue.adImpressionsCount = event.adImpressionCount;
+    adjustAdRevenue.adRevenueUnit = event.adRevenueUnit;
+
+    Adjust.trackAdRevenueNew(adjustAdRevenue);
+  }
+
 
   /// Get the Adjust SDK ad id
   /// This method should be called after calling [start]
