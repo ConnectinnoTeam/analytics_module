@@ -114,7 +114,6 @@ class AdjustService {
     Adjust.trackEvent(adjustEvent);
   }
 
-
   /// Log a ad revenue event to the Adjust SDK
   /// [event] the ad revenue event to log
   /// This method should be called after calling [start]
@@ -125,12 +124,9 @@ class AdjustService {
     adjustAdRevenue.setRevenue(event.revenue, event.currency);
     adjustAdRevenue.adRevenuePlacement = event.placement;
     adjustAdRevenue.adRevenueNetwork = event.network;
-    adjustAdRevenue.adImpressionsCount = event.adImpressionCount;
-    adjustAdRevenue.adRevenueUnit = event.adRevenueUnit;
 
     Adjust.trackAdRevenueNew(adjustAdRevenue);
   }
-
 
   /// Get the Adjust SDK ad id
   /// This method should be called after calling [start]

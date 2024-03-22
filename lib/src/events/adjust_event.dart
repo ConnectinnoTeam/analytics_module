@@ -52,9 +52,6 @@ class AdjustAdRevenueEvent extends IAdjustEvent {
     required this.source,
     required this.placement,
     required this.network,
-    required this.adRevenueUnit,
-    required this.adImpressionCount,
-
   });
 
   final double revenue;
@@ -62,8 +59,6 @@ class AdjustAdRevenueEvent extends IAdjustEvent {
   final String source;
   final String placement;
   final String network;
-  final String adRevenueUnit;
-  final num adImpressionCount;
 
   @override
   void printEvent() {
@@ -74,8 +69,6 @@ class AdjustAdRevenueEvent extends IAdjustEvent {
     print('Source: $source');
     print('Placement: $placement');
     print('Network: $network');
-    print('adRevenueUnit: $adRevenueUnit');
-    print('adImpressionCount: $adImpressionCount');
     print("-" * 20);
   }
 }
